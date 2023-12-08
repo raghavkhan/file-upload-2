@@ -56,8 +56,15 @@ try {
 
 async function fetchProducts () {
  try {
-  const {data:{products}} = await axios.get(url);
+  const {
+    data: { products },
+  } = await axios.get(url);
+
+  console.log(products);
+  console.log(data);
   
+
+
   const productsDOM = products.map((product)=>{
 return `<article class="product">
 <img src="${product.image}" alt="${product.name}" class="img"/>
